@@ -1,0 +1,27 @@
+@import './pages/main.scss';
+@import './pages/results.scss';
+
+#root{
+    height: 100vh;
+    width: 100vw;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page{
+    background-color: honeydew;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 35em;
+    height: 45em;
+
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: 1em;
+
+    border-radius: 10px;
+}
