@@ -17,10 +17,10 @@ export function Main(){
 
     return(
         <div className="main page">
-            <h1 className='title'>Find your equivalent <span>「Jojo's Bizzare Adventure」</span>stand based on your autism spectrum results</h1>
-            <p className='description'>Fill out this  <a href='https://www.idrlabs.com/autism-spectrum/test.php'>Autism Spectrum Test by IDRlabs,</a> once completed copy the url to the graph image of your results, paste it in the box below and hit go!</p>
+            <h1 className='title'>Find your equivalent<span>「Jojo's Bizzare Adventure」</span>stand based on your autism spectrum results</h1>
+            <p className='description'>Fill out this  <a href='https://www.idrlabs.com/autism-spectrum/test.php'>Autism Spectrum Test</a> by IDRlabs, once completed copy the URL to the graph image of your results, paste it in the box below and hit go!</p>
             <div className="input">
-                <label htmlFor="url-input">URL to image of results: </label>
+                <label htmlFor="url-input">URL to image: </label>
                 <input 
                     name='url-input' 
                     className='url-input'
@@ -37,6 +37,8 @@ export function Main(){
                         Go
                     </button>
             </div>
+
+            <p className='credits'>credits for the stand stats goes to jojowiki.com | credits for the idea go to kamran3210</p>
         </div>
     )
 }

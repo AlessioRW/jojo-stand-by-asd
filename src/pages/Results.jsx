@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import { calculateStand } from "../utils/calculateStand"
 import { useLocation } from "react-router-dom"
+import { useNavigate } from "react-router-dom/dist"
 
 export function Results(){
     const [standsByScore, setStandsByScore] = useState([])
     const location =  useLocation() 
+    const navigate = useNavigate()
     const score = location.state.score
 
     useEffect(() => {
@@ -17,7 +19,7 @@ export function Results(){
                 <h1>Results</h1>
     
                 <div className="most-similar">
-                    <h2 className="main-stand">Your most similar stand is: {standsByScore[0][0]}</h2>
+                    <h2 className="main-stand">Your most similar stand is: <a href={`https://jojowiki.com/${(standsByScore[0][0]).split('(')[0]}`} >{standsByScore[0][0]}</a></h2>
                 </div>
 
                 <div className="top-five">
@@ -25,12 +27,13 @@ export function Results(){
                     {(standsByScore.slice(1,5)).map((stand) => {
                         return (
                             <div className="stand-container">
-                                <h3 className="sub-stand">{stand[0]}</h3>
+                                <h3 className="sub-stand"><a href={`https://jojowiki.com/${(stand[0]).split('(')[0]}`} >{stand[0]}</a></h3>
                             </div>
                         )
                     })}
                     
                 </div>
+                <h2 className="home-link"  onClick={() => {navigate('/')}} >Go to home</h2>
             </div>
         )
     } else {
