@@ -9,10 +9,9 @@ export function Main(){
 
     function submit(){
         //https://charts.idrlabs.com/graphic/autism-spectrum?2&p=60,60,35,50,70,75,60,45,60,65&l=EN
-        const scores =( ((url.split('=')[1]).split('&')[0]).split(',')).join('-')
-        console.log(scores)
+        const score =( ((url.split('=')[1]).split('&')[0]).split(',')).join('-')
 
-        navigate(`/results/${scores}`)
+        navigate(`/results/${score}`, {state: {score: score}})
 
     }
 
