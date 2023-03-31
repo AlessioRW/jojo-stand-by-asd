@@ -152,5 +152,5 @@
 {"name": "Dolly Dagger", "stats": {"power": 83, "speed": 83, "range": 50, "stamina": 83, "precision": 67, "potential": 50}},
 {"name": "Nightbird Flying", "stats": {"power": 17, "speed": 83, "range": 83, "stamina": 83, "precision": 17, "potential": 17}},
 {"name": "Purple Haze Distortion", "stats": {"power": 83, "speed": 67, "range": 17, "stamina": 17, "precision": 50, "potential": 17}},
-{"name": "Rainy Day Dream Away", "stats": {"power": 17, "speed": 67, "range": 83, "stamina": 83, "precision": 17, "potential": 17}},
+{"name": "Rainy Day Dream Away", "stats": {"power": 17, "speed": 67, "range": 83, "stamina": 83, "precision": 17, "potential": 17}}
 ]
