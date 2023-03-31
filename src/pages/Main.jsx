@@ -38,7 +38,7 @@ export function Main(){
                     </button>
             </div>
 
-            <p className='credits'>credits for the stand stats goes to jojowiki.com | credits for the idea go to kamran3210</p>
+            <p className='credits'>credits for the stand stats goes to jojowiki.com | credits for the idea go to kamran3210 <br /> <a href='https://github.com/AlessioRW/jojo-stand-by-asd'>GitHub Repo</a></p>
         </div>
     )
 }
