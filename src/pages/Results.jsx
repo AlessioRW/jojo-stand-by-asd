@@ -7,9 +7,10 @@ export function Results(){
     const [standsByScore, setStandsByScore] = useState([])
     const location =  useLocation() 
     const navigate = useNavigate()
-    const score = location.state.score
+    
 
     useEffect(() => {
+        const score = location.state.score
         setStandsByScore(calculateStand(score))
     }, [])
 
