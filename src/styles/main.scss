@@ -27,3 +27,10 @@
 
     border-radius: 10px;
 }
+
+@media (max-width: 800px){
+    .page{
+        width: 100vw;
+        height: 100vh;
+    }
+}

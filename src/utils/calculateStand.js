@@ -50,5 +50,9 @@ export function calculateStand(scores){
             standsByDiff.push([stand.name, totalDiff])
         }
     }
-    return standsByDiff.reverse()
+
+    
+    const revStands = standsByDiff.reverse()
+    standsByDiff.push({power: power, speed: speed, range:range, stamina: stamina, precision: precision, potential: potential})
+    return revStands
 }
