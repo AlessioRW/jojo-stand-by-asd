@@ -12,6 +12,8 @@
     font-family: Arial, Helvetica, sans-serif
 }
 
+
+
 .page{
     background-color:lightsalmon;
     display: flex;
@@ -29,8 +31,26 @@
 }
 
 @media (max-width: 800px){
+
+    html{
+        background-color: lightsalmon;
+    }
+
+    #root{
+        background-color: lightsalmon;
+        height: 100%;
+        
+    }
+    
+    
     .page{
+        padding-bottom: 1em;
         width: 100vw;
         height: 100vh;
+        border-radius: 0px;
+
+        input{
+            margin-left: 0.1em;
+        }
     }
 }

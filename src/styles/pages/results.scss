@@ -48,3 +48,19 @@
 
     
 }
+
+
+@media (max-width: 800px){
+    .user-stats{
+        display: flex;
+        flex-direction: column;
+        gap: 0.1em;
+        h3{
+            text-align: center;
+            font-size: 80%;
+            margin-bottom: 0.1em;
+            margin-top: 0.2em;
+        }
+    }
+
+}

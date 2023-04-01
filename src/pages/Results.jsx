@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import { calculateStand } from "../utils/calculateStand"
-import { useLocation } from "react-router-dom"
+import { useLocation, useSearchParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom/dist"
 
 export function Results(){
     const [standsByScore, setStandsByScore] = useState([])
+    const [queryParameters] = useSearchParams()
 
     const location =  useLocation() 
     const navigate = useNavigate()
@@ -44,6 +45,7 @@ export function Results(){
     
 
     useEffect(() => {
+        console.log(queryParameters.get('scores'))
         if (location.state){
             setStandsByScore(calculateStand(location.state.score))
             

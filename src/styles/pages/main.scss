@@ -8,6 +8,8 @@
 
     .description{
         text-align: center;
+        padding-left: 1em;
+        padding-right: 1em;
     }
 
     .input{
@@ -52,5 +54,21 @@
         font-size: 80%;
         margin-bottom: 0px;
         text-align: center;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+@media (max-width: 800px){
+    .input{
+        width: 90%;
+        .url-input{
+            margin-left: 0.1em !important;
+        }
+
+        label{
+            text-align: left;
+        }
+        
     }
 }
