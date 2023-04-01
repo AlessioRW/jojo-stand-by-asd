@@ -36,6 +36,10 @@ export function Results(){
             return 'B'
         }
 
+        if (stat >= 83.3 && stat < 100){
+            return 'A'
+        }
+
         if (stat === 100){
             return '∞'
         }
