@@ -122,7 +122,7 @@ export function Results(){
                     <h3>Generating Graph Comparison...</h3>
                 :
                 <div className="image-div">
-                    <img className="stats-img" src={`data:image/jpeg;base64, ${imgData}`} />
+                    <img alt='stand-stats graph' className="stats-img" src={`data:image/jpeg;base64, ${imgData}`} />
                 </div>
                 }
 
