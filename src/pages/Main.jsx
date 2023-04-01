@@ -6,6 +6,7 @@ export function Main(){
     //「」
     const [url, setUrl] = useState('')
     const [inputError,setInputError] = useState(false)
+
     const navigate = useNavigate()
 
     function submit(){

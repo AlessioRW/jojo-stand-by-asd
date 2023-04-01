@@ -5,9 +5,32 @@ import { useNavigate } from "react-router-dom/dist"
 
 export function Results(){
     const [standsByScore, setStandsByScore] = useState([])
-
+    const [imgData, setImgData] = useState('')
     const location =  useLocation() 
     const navigate = useNavigate()
+
+    useEffect(() => {
+        if (location.state){
+            setStandsByScore(calculateStand(location.state.score))
+        }
+        
+    }, [location.state])
+
+    useEffect(() => {
+        if (standsByScore.length > 0){
+            const standStats = Object.values(standsByScore[0][2]).map((score) => {
+                return getGrade(score)
+            })
+
+            const userStats = Object.values(standsByScore[standsByScore.length-1]).map((score) => {
+                return getGrade(score)
+            })
+            console.log(userStats.join('-'))
+            fetch(`https://jojo-stand-by-asd-api-production.up.railway.app/graph/${userStats.join('-')}/${standStats.join('-')}/${standsByScore[0][0]}`, {method: 'POST'}).then(res => res.json()).then(data => setImgData(data[1].buffer))
+        }
+    }, [standsByScore])
+
+    
 
 
     function getGrade(stat){
@@ -47,19 +70,13 @@ export function Results(){
     }
     
 
-    useEffect(() => {
-        if (location.state){
-            setStandsByScore(calculateStand(location.state.score))
-            
-            
-        }
-        
-    }, [location.state])
+    
 
     if (standsByScore.length > 0){
         const userStats = standsByScore[standsByScore.length-1]
         return (
             <div className="results page">
+                
                 <h1>Results</h1>
     
                 <div className="most-similar">
@@ -101,6 +118,16 @@ export function Results(){
                     
                 </div>
 
+                {imgData === '' ? 
+                    <h3>Generating Graph Comparison...</h3>
+                :
+                <div className="image-div">
+                    <img className="stats-img" src={`data:image/jpeg;base64, ${imgData}`} />
+                </div>
+                }
+
+                
+
                 <div className="top-five">
                     <h2>Next cloesest stands:</h2>
                     {(standsByScore.slice(1,5)).map((stand) => {
@@ -112,7 +139,6 @@ export function Results(){
                     })}
                     
                 </div>
-                <p className="future">In the future i might generate the stand the users stat chart to compare on this page</p>
                 <h2 className="home-link"  onClick={() => {navigate('/')}} >back to home</h2>
             </div>
         )

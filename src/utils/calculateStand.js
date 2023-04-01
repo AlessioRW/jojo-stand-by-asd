@@ -36,18 +36,18 @@ export function calculateStand(scores){
 
         let addedStand = false
         if (standsByDiff.length <= 0){
-            standsByDiff.push([stand.name, totalDiff])
+            standsByDiff.push([stand.name, totalDiff, stand.stats])
         } else {
             for (let [i,checkStand] of standsByDiff.entries()){
                 if (checkStand[1] < totalDiff){
-                    standsByDiff.splice(i,0, [stand.name, totalDiff])
+                    standsByDiff.splice(i,0, [stand.name, totalDiff, stand.stats])
                     addedStand = true
                     break
                 }
             }
         }
         if (!addedStand){
-            standsByDiff.push([stand.name, totalDiff])
+            standsByDiff.push([stand.name, totalDiff, stand.stats])
         }
     }
 
