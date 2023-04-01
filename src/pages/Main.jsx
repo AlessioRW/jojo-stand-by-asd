@@ -10,6 +10,7 @@ export function Main(){
 
     function submit(){
         //https://charts.idrlabs.com/graphic/autism-spectrum?2&p=60,60,35,50,70,75,60,45,60,65&l=EN
+        
         const pattern = new RegExp(
             '(https://charts.idrlabs.com/graphic/autism-spectrum\\?2&p=)([1-9][0-9]?([0-9]*)?,*){10}(&l=[A-Z]+)'
         )
@@ -54,7 +55,7 @@ export function Main(){
                     Invalid Input
                 </h3>
             }
-            <p className='credits'>credits for the stand stats goes to jojowiki.com | credits for the idea go to kamran3210</p>
+            <p className='credits'>credits for the stand stats goes to jojowiki.com | credits for the idea go to kmrn._ on tiktok</p>
             {/* <a href='https://github.com/AlessioRW/jojo-stand-by-asd'>GitHub Repo</a> */}
         </div>
     )

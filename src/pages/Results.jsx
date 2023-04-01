@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom/dist"
 
 export function Results(){
     const [standsByScore, setStandsByScore] = useState([])
-    const [queryParameters] = useSearchParams()
 
     const location =  useLocation() 
     const navigate = useNavigate()
