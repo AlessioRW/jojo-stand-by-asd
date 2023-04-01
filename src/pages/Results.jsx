@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { calculateStand } from "../utils/calculateStand"
-import { useLocation, useSearchParams } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import { useNavigate } from "react-router-dom/dist"
 
 export function Results(){
