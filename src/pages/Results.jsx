@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom/dist"
 
 export function Results(){
     const [standsByScore, setStandsByScore] = useState([])
-    const [userStats, setuserStats] = useState({})
 
     const location =  useLocation() 
     const navigate = useNavigate()
@@ -47,13 +46,14 @@ export function Results(){
     useEffect(() => {
         if (location.state){
             setStandsByScore(calculateStand(location.state.score))
-            setuserStats(standsByScore[standsByScore.length-1])
+            
             
         }
         
     }, [location.state])
 
     if (standsByScore.length > 0){
+        const userStats = standsByScore[standsByScore.length-1]
         return (
             <div className="results page">
                 <h1>Results</h1>
