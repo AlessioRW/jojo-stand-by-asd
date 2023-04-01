@@ -11,7 +11,7 @@ export function Main(){
     function submit(){
         //https://charts.idrlabs.com/graphic/autism-spectrum?2&p=60,60,35,50,70,75,60,45,60,65&l=EN
         const pattern = new RegExp(
-            '(https:\/\/charts\.idrlabs\.com\/graphic\/autism-spectrum\\?2&p=)([1-9][0-9]?([0-9]*)?,*){10}(&l=[A-Z]+)'
+            '(https://charts.idrlabs.com/graphic/autism-spectrum\\?2&p=)([1-9][0-9]?([0-9]*)?,*){10}(&l=[A-Z]+)'
         )
 
         if (pattern.test(url)){
