@@ -45,7 +45,6 @@ export function Results(){
     
 
     useEffect(() => {
-        console.log(queryParameters.get('scores'))
         if (location.state){
             setStandsByScore(calculateStand(location.state.score))
             
