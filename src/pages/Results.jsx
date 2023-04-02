@@ -25,7 +25,9 @@ export function Results(){
             const userStats = Object.values(standsByScore[standsByScore.length-1]).map((score) => {
                 return getGrade(score)
             })
-            console.log(userStats.join('-'))
+
+            console.log(standsByScore[0][2])
+            console.log(standStats)
             fetch(`https://jojo-stand-by-asd-api-production.up.railway.app/graph/${userStats.join('-')}/${standStats.join('-')}/${standsByScore[0][0]}`, {method: 'POST'}).then(res => res.json()).then(data => setImgData(data[1].buffer))
         }
     }, [standsByScore])
@@ -39,31 +41,27 @@ export function Results(){
             return '∅'
         }
 
-        if (stat <= 16.6){
+        if (stat <= 17){
             return 'E'
         }
 
-        if (stat >= 16.6 && stat < 33.3){
+        if (stat > 17 && stat < 33.3){
             return 'D'
         }
 
-        if (stat >= 33.3 && stat < 50){
+        if (stat >= 33.3 && stat <= 50){
             return 'C'
         }
 
-        if (stat >= 50 && stat < 66.6){
+        if (stat >= 50 && stat < 68){
             return 'B'
         }
 
         if (stat >= 66.6 && stat < 83.3){
-            return 'B'
-        }
-
-        if (stat >= 83.3 && stat < 100){
             return 'A'
         }
 
-        if (stat === 100){
+        if (stat >= 83.3 && stat < 100){
             return '∞'
         }
 
